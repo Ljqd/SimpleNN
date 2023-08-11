@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\activation">
+      <UniqueIdentifier>{63bb1740-31b3-4b4b-aa80-52d20fefe8ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\layers">
+      <UniqueIdentifier>{5b7990bf-02d1-4a41-91bd-e562f36a37c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\optimization">
+      <UniqueIdentifier>{8db41ca7-02ef-4150-ad2e-f2522070e836}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{b0560423-42e6-4d89-b979-433d9a2e99cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\cost">
+      <UniqueIdentifier>{97e6318f-363e-4063-abab-26266fe0ed45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\loaders">
+      <UniqueIdentifier>{cab00953-5c78-4aa7-b1f4-66274ee0f382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\test">
+      <UniqueIdentifier>{3f87b213-3faf-4c7a-9eeb-c67bcc11fc18}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layers\Dense.cpp">
+      <Filter>Header Files\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Sigmoid.cpp">
+      <Filter>Header Files\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Relu.cpp">
+      <Filter>Header Files\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\Sequential.cpp">
+      <Filter>Header Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cost\MeanSquareError.cpp">
+      <Filter>Header Files\cost</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cost\BinaryCrossEntropy.cpp">
+      <Filter>Header Files\cost</Filter>
+    </ClCompile>
+    <ClCompile Include="src\activation\Tanh.cpp">
+      <Filter>Header Files\activation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\layers\Flatten.cpp">
+      <Filter>Header Files\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loaders\ImageLoader.cpp">
+      <Filter>Header Files\loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cases\numeric_binary_classification.h">
+      <Filter>Header Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cases\numeric_binary_classification.cpp">
+      <Filter>Header Files\test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\activation\AbstractActivation.h">
+      <Filter>Header Files\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layers\AbstractLayer.h">
+      <Filter>Header Files\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layers\Dense.h">
+      <Filter>Header Files\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\optimization\AbstractOptimizer.h">
+      <Filter>Header Files\optimization</Filter>
+    </ClInclude>
+    <ClInclude Include="src\activation\Sigmoid.h">
+      <Filter>Header Files\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\activation\Relu.h">
+      <Filter>Header Files\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\AbstractModel.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\Sequential.h">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cost\AbstractCost.h">
+      <Filter>Header Files\cost</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cost\MeanSquareError.h">
+      <Filter>Header Files\cost</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cost\BinaryCrossEntropy.h">
+      <Filter>Header Files\cost</Filter>
+    </ClInclude>
+    <ClInclude Include="src\activation\Tanh.h">
+      <Filter>Header Files\activation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\loaders\AbstractLoader.h">
+      <Filter>Header Files\loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layers\Flatten.h">
+      <Filter>Header Files\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\loaders\ImageLoader.h">
+      <Filter>Header Files\loaders</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
