@@ -19,4 +19,7 @@ The primary goal of SimpleNN is educational, provide understanding of neural net
 - Add optimizers: Momentum, RMSProp, Adam, AdaGrad
 - Advanced dataset split (like sklearn *test_train_split* function).
 - Image input. For now, it is difficult to implement directly because Eigen::MatrixXf (default container for now) requires too much space when loading an image. So, probably we need to implement our own tensor-like container or/and use c++ templates.
+- In addition to image input. Have something like Keras ImageDataGenerator would be nice.
 - Refinements of code. Appropriate implementation for test_cases.
+- Regularization: L1, L2, ElasticNet. Need to come up with agile implementation of this methods (don't want to hard-code them into each cost object)
+- Normalization mechanism: dataset, batch, inner-layer
