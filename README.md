@@ -23,3 +23,4 @@ The primary goal of SimpleNN is educational, provide understanding of neural net
 - Refinements of code. Appropriate implementation for test_cases.
 - Regularization: L1, L2, ElasticNet. Need to come up with some agile implementation of these methods (don't want to hard-code them into each cost object)
 - Normalization mechanism: dataset, batch, inner-layer
+- Question about resourse optimization in Dense
