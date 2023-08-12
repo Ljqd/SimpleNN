@@ -54,11 +54,20 @@ void Sequential::train(const Eigen::MatrixXf& data,
     // ToDo: we need to add some sort of check
     // call this function only if we actually have Dropout in layers
     // Add flag in addLayer().
-    setDropoutOnTrain();    
+    setDropoutOnTrain();
+
+    // for random shuffle
+    std::random_device rd;
+    std::mt19937 g(rd());
 
     for (int epoch = 0; epoch < epochs; ++epoch)
     {
         double averageLoss = 0.0;
+
+        // Shuffling mechanism
+        std::vector<int> indices(nSamples);
+        std::iota(indices.begin(), indices.end(), 0);
+        std::shuffle(indices.begin(), indices.end(), g);
 
         for (int batch = 0; batch < nBatches; ++batch)
         {

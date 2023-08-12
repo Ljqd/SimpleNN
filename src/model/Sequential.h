@@ -1,5 +1,11 @@
 #pragma once
 
+#include <algorithm>
+#include <iostream>
+#include <iterator>
+#include <random>
+#include <numeric>
+
 #include "AbstractModel.h"
 #include "../layers/AbstractLayer.h"
 #include "../cost/AbstractCost.h"
