@@ -52,7 +52,7 @@ void numeric_binary_classification() {
     Sequential model;
 
     // Add a Dense layer
-    model.addLayer(std::make_shared<Dense>(2, 4, std::make_shared<Tanh>()));
+    model.addLayer(std::make_shared<Dense>(2, 4, std::make_shared<Tanh>(), "xavier"));
     model.addLayer(std::make_shared<Dense>(4, 1, std::make_shared<Sigmoid>()));
 
     // Compile the model

@@ -2,10 +2,24 @@
 
 #include <iostream>
 
-Dense::Dense(int inputSize, int outputSize, std::shared_ptr<AbstractActivation> act)
-    : weights(Eigen::MatrixXf::Random(inputSize, outputSize)),
-    bias(Eigen::VectorXf::Random(outputSize)),
-    activation(act) {}
+Dense::Dense(int inputSize, int outputSize, std::shared_ptr<AbstractActivation> act, const std::string& initializationType)
+    : activation(act)
+{
+    if (initializationType == "xavier") {
+        float variance = sqrt(2.0 / (inputSize + outputSize));
+        weights = Eigen::MatrixXf::Random(inputSize, outputSize) * variance;
+    }
+    else if (initializationType == "he") {  // He initialization, which is often recommended for ReLU
+        float variance = sqrt(2.0 / inputSize);
+        weights = Eigen::MatrixXf::Random(inputSize, outputSize) * variance;
+    }
+    else {
+        weights = Eigen::MatrixXf::Random(inputSize, outputSize); // default
+    }
+
+    bias = Eigen::VectorXf::Zero(outputSize);
+}
+
 
 Eigen::MatrixXf Dense::forward(const Eigen::MatrixXf& input)
 {

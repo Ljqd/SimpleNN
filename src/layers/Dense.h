@@ -1,12 +1,14 @@
 #pragma once
 
+#include <string>
+
 #include "AbstractLayer.h"
 #include "../activation/AbstractActivation.h"
 
 class Dense : public AbstractLayer
 {
 public:
-    Dense(int inputSize, int outputSize, std::shared_ptr<AbstractActivation> act);
+    Dense(int inputSize, int outputSize, std::shared_ptr<AbstractActivation> act, const std::string& initializationType="default");
 
     Eigen::MatrixXf forward(const Eigen::MatrixXf& input) override;
     Eigen::MatrixXf backward(const Eigen::MatrixXf& dOutput) override;
