@@ -135,9 +135,11 @@
     <ClCompile Include="src\cost\BinaryCrossEntropy.cpp" />
     <ClCompile Include="src\cost\MeanSquareError.cpp" />
     <ClCompile Include="src\layers\Dense.cpp" />
+    <ClCompile Include="src\layers\Dropout.cpp" />
     <ClCompile Include="src\layers\Flatten.cpp" />
     <ClCompile Include="src\loaders\ImageLoader.cpp" />
     <ClCompile Include="src\model\Sequential.cpp" />
+    <ClCompile Include="test_cases\dropout_test.cpp" />
     <ClCompile Include="test_cases\numeric_binary_classification.cpp" />
     <ClCompile Include="test_cases\numeric_binary_classification.h" />
   </ItemGroup>
@@ -151,12 +153,14 @@
     <ClInclude Include="src\cost\MeanSquareError.h" />
     <ClInclude Include="src\layers\AbstractLayer.h" />
     <ClInclude Include="src\layers\Dense.h" />
+    <ClInclude Include="src\layers\Dropout.h" />
     <ClInclude Include="src\layers\Flatten.h" />
     <ClInclude Include="src\loaders\AbstractLoader.h" />
     <ClInclude Include="src\loaders\ImageLoader.h" />
     <ClInclude Include="src\model\AbstractModel.h" />
     <ClInclude Include="src\model\Sequential.h" />
     <ClInclude Include="src\optimization\AbstractOptimizer.h" />
+    <ClInclude Include="test_cases\dropout_test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

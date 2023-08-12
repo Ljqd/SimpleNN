@@ -18,6 +18,7 @@
 #include "src/cost/BinaryCrossEntropy.h"
 
 #include "./test_cases/numeric_binary_classification.h"
+#include "./test_cases/dropout_test.h"
 
 struct DataSet {
     Eigen::MatrixXf batch;
@@ -25,7 +26,9 @@ struct DataSet {
 };
 
 int main() {
-    numeric_binary_classification();
+    // numeric_binary_classification();
+    dropout_test();
+
     /*
     ImageLoader loader("./resources/images/cats_dogs_light");
     loader.load();

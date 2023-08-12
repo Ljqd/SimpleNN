@@ -1,5 +1,7 @@
 #include "Sequential.h"
 
+#include "../layers/Dropout.h"
+
 #include <iostream>
 
 // Add a layer to the model
@@ -38,20 +40,21 @@ void Sequential::train(const Eigen::MatrixXf& data,
     const Eigen::MatrixXf& target,
     int epochs,
     double learningRate,
-    int batch_size)
+    int batchSize)
 {
     int nSamples = data.rows();
-
     int nBatches;
-    if (batch_size > 0)
-    {
-        nBatches = (nSamples + batch_size - 1) / batch_size;
-    }
-    else
-    {
-        nBatches = 1;
-        batch_size = nSamples;
-    }
+
+    std::pair<int, int> batchSizeAndNumber = getBatchSize(batchSize, nSamples);
+
+    batchSize = batchSizeAndNumber.first;
+    nBatches = batchSizeAndNumber.second;
+
+
+    // ToDo: we need to add some sort of check
+    // call this function only if we actually have Dropout in layers
+    // Add flag in addLayer().
+    setDropoutOnTrain();    
 
     for (int epoch = 0; epoch < epochs; ++epoch)
     {
@@ -59,8 +62,8 @@ void Sequential::train(const Eigen::MatrixXf& data,
 
         for (int batch = 0; batch < nBatches; ++batch)
         {
-            int startIdx = batch * batch_size;
-            int endIdx = std::min(startIdx + batch_size, nSamples); // ensure we don't go out of bounds
+            int startIdx = batch * batchSize;
+            int endIdx = std::min(startIdx + batchSize, nSamples); // ensure we don't go out of bounds
             int currentBatchSize = endIdx - startIdx;
 
             Eigen::MatrixXf batchData = data.middleRows(startIdx, currentBatchSize);
@@ -89,6 +92,7 @@ void Sequential::train(const Eigen::MatrixXf& data,
 
 Eigen::MatrixXf Sequential::predict(const Eigen::MatrixXf& input)
 {
+    setDropoutOnPredict();
     return forward(input);
 }
 
@@ -102,4 +106,40 @@ void Sequential::loadModel(const std::string& filepath)
 {
     // Implementation to load the model's parameters from a file.
     // This would involve deserializing the saved data into weight and bias matrices and other parameters.
+}
+
+std::pair<int, int> Sequential::getBatchSize(int batchSize, int nSamples)
+{
+    int nBatches;
+    if (batchSize > 0)
+    {
+        nBatches = (nSamples + batchSize - 1) / batchSize;
+    }
+    else
+    {
+        nBatches = 1;
+        batchSize = nSamples;
+    }
+    std::pair<int, int> batchSizeAndNumber = { batchSize, nBatches };
+    return batchSizeAndNumber;
+}
+
+void Sequential::setDropoutOnTrain() {
+    for (auto& layer : layers) {
+        std::shared_ptr<Dropout> dropoutLayer = std::dynamic_pointer_cast<Dropout>(layer);
+        if (dropoutLayer) {
+            // Do something with the Dropout layer when training
+            dropoutLayer->setTrainingMode(Dropout::DropoutMode::training);
+        }
+    }
+}
+
+void Sequential::setDropoutOnPredict() {
+    for (auto& layer : layers) {
+        std::shared_ptr<Dropout> dropoutLayer = std::dynamic_pointer_cast<Dropout>(layer);
+        if (dropoutLayer) {
+            // Do something with the Dropout layer when predicting
+            dropoutLayer->setTrainingMode(Dropout::DropoutMode::prediction);
+        }
+    }
 }

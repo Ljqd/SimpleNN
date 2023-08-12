@@ -72,6 +72,12 @@
     <ClCompile Include="test_cases\numeric_binary_classification.cpp">
       <Filter>Header Files\test</Filter>
     </ClCompile>
+    <ClCompile Include="src\layers\Dropout.cpp">
+      <Filter>Header Files\layers</Filter>
+    </ClCompile>
+    <ClCompile Include="test_cases\dropout_test.cpp">
+      <Filter>Header Files\test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\activation\AbstractActivation.h">
@@ -118,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="src\loaders\ImageLoader.h">
       <Filter>Header Files\loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\layers\Dropout.h">
+      <Filter>Header Files\layers</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cases\dropout_test.h">
+      <Filter>Header Files\test</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

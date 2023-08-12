@@ -17,7 +17,7 @@ public:
 
     void backward(const Eigen::MatrixXf& dOutput, double learningRate) override;
 
-    void train(const Eigen::MatrixXf& data, const Eigen::MatrixXf& target, int epochs, double learningRate, int batch_size = 32) override;
+    void train(const Eigen::MatrixXf& data, const Eigen::MatrixXf& target, int epochs, double learningRate, int batchSize = 32) override;
 
     Eigen::MatrixXf predict(const Eigen::MatrixXf& input) override;
 
@@ -26,6 +26,11 @@ public:
     void loadModel(const std::string& filepath) override;
 
 private:
+
+    std::pair<int, int> getBatchSize(int batchSize, int nSamples);
+    void setDropoutOnTrain();
+    void setDropoutOnPredict();
+
     std::vector<std::shared_ptr<AbstractLayer>> layers;
     std::shared_ptr<AbstractCost> lossFunction;
 };
