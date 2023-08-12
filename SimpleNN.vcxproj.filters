@@ -78,6 +78,9 @@
     <ClCompile Include="test_cases\dropout_test.cpp">
       <Filter>Header Files\test</Filter>
     </ClCompile>
+    <ClCompile Include="test_cases\image_test.cpp">
+      <Filter>Header Files\test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\activation\AbstractActivation.h">
@@ -129,6 +132,9 @@
       <Filter>Header Files\layers</Filter>
     </ClInclude>
     <ClInclude Include="test_cases\dropout_test.h">
+      <Filter>Header Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="test_cases\image_test.h">
       <Filter>Header Files\test</Filter>
     </ClInclude>
   </ItemGroup>

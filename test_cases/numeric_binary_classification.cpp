@@ -1,5 +1,3 @@
-#pragma once
-
 #include "numeric_binary_classification.h"
 
 void numeric_binary_classification() {

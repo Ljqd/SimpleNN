@@ -140,6 +140,7 @@
     <ClCompile Include="src\loaders\ImageLoader.cpp" />
     <ClCompile Include="src\model\Sequential.cpp" />
     <ClCompile Include="test_cases\dropout_test.cpp" />
+    <ClCompile Include="test_cases\image_test.cpp" />
     <ClCompile Include="test_cases\numeric_binary_classification.cpp" />
     <ClCompile Include="test_cases\numeric_binary_classification.h" />
   </ItemGroup>
@@ -161,6 +162,7 @@
     <ClInclude Include="src\model\Sequential.h" />
     <ClInclude Include="src\optimization\AbstractOptimizer.h" />
     <ClInclude Include="test_cases\dropout_test.h" />
+    <ClInclude Include="test_cases\image_test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
