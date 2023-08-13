@@ -57,7 +57,7 @@ void dropout_test() {
     model.addLayer(std::make_shared<Dense>(8, 1, std::make_shared<Sigmoid>()));
 
     // Compile the model
-    model.compile(std::make_shared<BinaryCrossEntropy>());
+    model.compile(std::make_shared<BinaryCrossEntropy>(), std::make_shared<GradientDescent>(0.1));
 
     // Train the model
     model.train(X, Y, 3000, 0.1, -1);

@@ -17,4 +17,6 @@
 #include "../src/cost/MeanSquareError.h"
 #include "../src/cost/BinaryCrossEntropy.h"
 
+#include "../src/optimization/GradientDescent.h"
+
 void dropout_test();
