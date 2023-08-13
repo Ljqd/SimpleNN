@@ -81,6 +81,9 @@
     <ClCompile Include="test_cases\image_test.cpp">
       <Filter>Header Files\test</Filter>
     </ClCompile>
+    <ClCompile Include="src\optimization\GradientDescent.cpp">
+      <Filter>Header Files\optimization</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\activation\AbstractActivation.h">
@@ -136,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="test_cases\image_test.h">
       <Filter>Header Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\optimization\GradientDescent.h">
+      <Filter>Header Files\optimization</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

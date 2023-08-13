@@ -139,6 +139,7 @@
     <ClCompile Include="src\layers\Flatten.cpp" />
     <ClCompile Include="src\loaders\ImageLoader.cpp" />
     <ClCompile Include="src\model\Sequential.cpp" />
+    <ClCompile Include="src\optimization\GradientDescent.cpp" />
     <ClCompile Include="test_cases\dropout_test.cpp" />
     <ClCompile Include="test_cases\image_test.cpp" />
     <ClCompile Include="test_cases\numeric_binary_classification.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="src\model\AbstractModel.h" />
     <ClInclude Include="src\model\Sequential.h" />
     <ClInclude Include="src\optimization\AbstractOptimizer.h" />
+    <ClInclude Include="src\optimization\GradientDescent.h" />
     <ClInclude Include="test_cases\dropout_test.h" />
     <ClInclude Include="test_cases\image_test.h" />
   </ItemGroup>
