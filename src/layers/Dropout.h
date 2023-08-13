@@ -14,7 +14,9 @@ public:
 
     Eigen::MatrixXf forward(const Eigen::MatrixXf& input) override;
     Eigen::MatrixXf backward(const Eigen::MatrixXf& dOutput) override;
-    void updateWeights(double learningRate) override;
+
+    void updateWeights() override {};
+    void setOptimizer(std::shared_ptr<AbstractOptimizer> optimizer) override {};
 
     void setTrainingMode(DropoutMode mode);
 

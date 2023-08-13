@@ -3,6 +3,7 @@
 #include <string>
 
 #include "AbstractLayer.h"
+#include "../optimization/AbstractOptimizer.h"
 #include "../activation/AbstractActivation.h"
 
 class Dense : public AbstractLayer
@@ -14,12 +15,14 @@ public:
     Eigen::MatrixXf backward(const Eigen::MatrixXf& dOutput) override;
 
     // Weight update function for training
-    void updateWeights(double learningRate) override;
+    void updateWeights() override;
+    void setOptimizer(std::shared_ptr<AbstractOptimizer> optimizer) override;
 
 private:
     Eigen::MatrixXf weights;
     Eigen::VectorXf bias;
     std::shared_ptr<AbstractActivation> activation;
+    std::shared_ptr<AbstractOptimizer> optimizer;
 
     Eigen::MatrixXf lastInput;
     Eigen::MatrixXf Z;

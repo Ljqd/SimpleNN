@@ -28,11 +28,6 @@ Eigen::MatrixXf Dropout::backward(const Eigen::MatrixXf& dOutput)
     }
 }
 
-void Dropout::updateWeights(double learningRate)
-{
-    // No weights to update in dropout
-}
-
 void Dropout::setTrainingMode(DropoutMode mode) {
     this->mode = mode;
 }

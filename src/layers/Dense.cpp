@@ -52,9 +52,14 @@ Eigen::MatrixXf Dense::backward(const Eigen::MatrixXf& dOutput)
 }
 
 
-void Dense::updateWeights(double learningRate)
+void Dense::updateWeights()
 {
-    weights = weights - learningRate * dWeights;
-    bias = bias - learningRate * dBias;
+    optimizer->updateWeights(weights, dWeights);
+    optimizer->updateBias(bias, dBias);
+}
+
+void Dense::setOptimizer(std::shared_ptr<AbstractOptimizer> optimizer)
+{
+    this->optimizer = optimizer;
 }
 

@@ -1,6 +1,10 @@
 #pragma once
 
 #include <Eigen/Dense>
+#include <memory>
+
+#include "../optimization/AbstractOptimizer.h"
+
 
 class AbstractLayer
 {
@@ -14,5 +18,9 @@ public:
     virtual Eigen::MatrixXf backward(const Eigen::MatrixXf& dOutput) = 0;
 
     // Weight update function for training
-    virtual void updateWeights(double learningRate) = 0;
+    virtual void updateWeights() = 0;
+
+    // Define the way how you will update your weights
+    // the beauty - code in Sequential almost don't change, we just don't care what happens within updateWeights
+    virtual void setOptimizer(std::shared_ptr<AbstractOptimizer> optimizer) = 0;
 };
