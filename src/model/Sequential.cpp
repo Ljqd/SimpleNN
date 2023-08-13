@@ -10,9 +10,15 @@ void Sequential::addLayer(std::shared_ptr<AbstractLayer> layer)
     layers.push_back(layer);
 }
 
-void Sequential::compile(std::shared_ptr<AbstractCost> loss)
+void Sequential::compile(std::shared_ptr<AbstractCost> loss, std::shared_ptr<AbstractOptimizer> optimizer)
 {
     lossFunction = loss;
+    this->optimizer = optimizer;
+
+    for (auto layer : layers)
+    {
+        layer->setOptimizer(optimizer->clone());
+    }
 
     // Optionally, set other attributes like optimizer and metrics here.
 }
@@ -90,7 +96,7 @@ void Sequential::train(const Eigen::MatrixXf& data,
             // Update weights
             for (auto& layer : layers)
             {
-                layer->updateWeights(learningRate);
+                layer->updateWeights();
             }
         }
 
