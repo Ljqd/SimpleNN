@@ -11,12 +11,13 @@ SimpleNN is a demonstration project aimed at showcasing an implementation of the
 
 **Eigen Integration**: Leveraging the Eigen library for efficient matrix operations, offering a glimpse into the high-performance computation required in deep learning.
 
+**Optimizers**: Hone the learning process with a variety of optimization strategies, including Gradient Descent, Momentum, RMSProp, Adam, and AdaGrad.
+
 ## Purpose
 The primary goal of SimpleNN is educational, provide understanding of neural networks without the complexities of extensive frameworks.
 
 ## ToDo
 - Add different metrics and history object with ability of correpsonding plot in Matplot
-- Add optimizers: Momentum, RMSProp, Adam, AdaGrad
 - Advanced dataset split (like sklearn *test_train_split* function).
 - Image input. For now, it is difficult to implement directly because Eigen::MatrixXf (default container for now) requires too much space when loading an image. So, probably we need to implement our own tensor-like container or/and use c++ templates.
 - In addition to image input. Have something like Keras ImageDataGenerator would be nice.
